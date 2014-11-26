@@ -9,6 +9,7 @@ import Biblioteca.Editora;
 import Tablet.Kindle;
 import Tablet.Kobo;
 import java.util.Scanner;
+import Tablet.Ligar;
 /**
  *
  * @author Thales Sousa
@@ -24,6 +25,7 @@ public class Main {
     Kindle Kindle = new Kindle();
     Kobo Kobo = new Kobo();
     Editora JBC = new Editora();
+    //Ligar Opcaoligar = new Ligar();
     do{
        System.out.println("Deseja usar qual dispositivo? \n");
        System.out.println("1 - Kindle \n"); 
@@ -31,15 +33,17 @@ public class Main {
        opcaodispositivo = input.nextInt();
        switch(opcaodispositivo){
            case 1:
+           if( Kindle instanceof Kindle )
+       System.out.println("Agora voce esta usando um kindle! \n");
        System.out.println("Deseja ligar o dispositivo? \n");
        System.out.println("1 - Sim \n"); 
        System.out.println("2 - Não(Sai do programa) \n"); 
        opcaoligar = input.nextInt();
        switch(opcaoligar){
            case 1:
-           System.out.println("Dispositivo ligado! \n");  
+    Kindle.on();
     do{
-    Kindle.menu(opcao);
+    if( Kindle instanceof Kindle ){Kindle.menu(opcao);}
     switch(opcao){
         case 1:  
            Livronovo.setAtributos();
@@ -80,16 +84,17 @@ public class Main {
               break;
                
            case 2:
-      do{
-          do{
+       if( Kobo instanceof Kobo )
+       System.out.println("Agora voce esta usando um kobo! \n");
        System.out.println("Deseja ligar o dispositivo? \n");
        System.out.println("1 - Sim \n"); 
        System.out.println("2 - Não(Sai do programa) \n"); 
        opcaoligar = input.nextInt();
        switch(opcaoligar){
            case 1:
-           System.out.println("Dispositivo ligado! \n");  
-    Kobo.menu(opcao);
+    Kobo.on();
+    do{
+    if( Kobo instanceof Kobo ){Kobo.menu(opcao);}
     switch(opcao){
         case 1:  
            Livronovo.setAtributos();
@@ -123,10 +128,11 @@ public class Main {
             opcao=0;
             break;
     }
-    }
     }while(opcao!=0);
     break;
     }while(opcao!=0);
+    
+              break;
 }
 }while(opcao!=0);
 }

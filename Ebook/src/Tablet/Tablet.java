@@ -15,14 +15,9 @@ public abstract class Tablet {
 	}
         /*Construtor */
 	public Tablet(int id, String marca) {
-
 	}
         @Override
 	public String toString() {
 		return null;
-	}
-        @Override
-	public boolean equals(Object other) {
-		return false;
 	}
 }

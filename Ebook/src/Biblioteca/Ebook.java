@@ -1,5 +1,6 @@
 package Biblioteca;
 import java.util.Scanner;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -48,7 +49,7 @@ public class Ebook extends Livro {
                 System.out.println("Autor valido \n"); 
         }
         System.out.println("Insira o nome do livro \n");
-        this.nomedolivro = input.nextLine();
+         this.nomedolivro = input.nextLine();
         if(this.nomedolivro.contains("^[a-Z]")){
                 System.out.println("Nome de livro valido \n");
         }

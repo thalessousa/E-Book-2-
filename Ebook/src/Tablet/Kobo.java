@@ -78,8 +78,9 @@ public class Kobo extends Reader implements Device,Comparable {
         System.out.println("7 - Imprimir a lista de livros da editora \n");
         System.out.println("8 - Versao do sistema \n");
         System.out.println("9 - Ir para uma pagina aleatoria do livro \n");
-        System.out.println("10 - Desligar o dispositivo(Sai do Programa) \n");
+        System.out.println("0 - Desligar o dispositivo(Sai do Programa) \n");
         Main.opcao = input.nextInt();
         
     }
+    
 }

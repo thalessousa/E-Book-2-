@@ -29,7 +29,7 @@ public abstract class Reader extends Tablet implements Tela {
      */
     @Override
     public void ler(){
-        System.out.println("Lendo o livro \n");
+        System.out.println("Lendo o livro " +this.paginaatual+ "\n");
     }
     /**
      * Passa para a proxima pagina
