@@ -9,16 +9,21 @@ import Biblioteca.Editora;
 import Tablet.Kindle;
 import Tablet.Kobo;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Thales Sousa
  */
-
+ 
 public class Main {
     public static int opcao,opcaoligar,opcaodispositivo;
     static  Scanner input = new Scanner(System.in);
+    private static String opcaopainel = null;
     
     public static void main(String[] args){
+     opcaopainel = JOptionPane.showInputDialog("Deseja iniciar o programa? \n");
+     Main.opcaopainel=input.nextLine();
+        
     System.out.println("Bem vindo");
     Ebook Livronovo = new Ebook();
     Kindle Kindle = new Kindle();
