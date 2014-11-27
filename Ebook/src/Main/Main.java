@@ -16,26 +16,21 @@ import javax.swing.JOptionPane;
  */
  
 public class Main {
-    public static int opcao,opcaoligar,opcaodispositivo;
+    public static int opcao,opcaoligar;
     static  Scanner input = new Scanner(System.in);
-    private static String opcaopainel = null;
+    private static String opcaodispositivo = "1";
     
     public static void main(String[] args){
-     opcaopainel = JOptionPane.showInputDialog("Deseja iniciar o programa? \n");
-     Main.opcaopainel=input.nextLine();
-        
     System.out.println("Bem vindo");
     Ebook Livronovo = new Ebook();
     Kindle Kindle = new Kindle();
     Kobo Kobo = new Kobo();
     Editora JBC = new Editora();
     do{
-       System.out.println("Deseja usar qual dispositivo? \n");
-       System.out.println("1 - Kindle \n"); 
-       System.out.println("2 - Kobo \n"); 
-       opcaodispositivo = input.nextInt();
+       opcaodispositivo = JOptionPane.showInputDialog("Deseja usar qual dispositivo? \n1 - Kindle \n2 - Kobo \n");
+       opcaodispositivo = input.nextLine();
        switch(opcaodispositivo){
-           case 1:
+           case "1":
        System.out.println("Deseja ligar o dispositivo? \n");
        System.out.println("1 - Sim \n"); 
        System.out.println("2 - Não(Sai do programa) \n"); 
@@ -44,7 +39,7 @@ public class Main {
            case 1:
            System.out.println("Dispositivo ligado! \n");  
     do{
-    Kindle.menu(opcao);
+    if( Kindle instanceof Kindle ){Kindle.menu(opcao);}
     switch(opcao){
         case 1:  
            Livronovo.setAtributos();
@@ -84,7 +79,7 @@ public class Main {
     
               break;
                
-           case 2:
+           case "2":
       do{
           do{
        System.out.println("Deseja ligar o dispositivo? \n");
@@ -94,7 +89,7 @@ public class Main {
        switch(opcaoligar){
            case 1:
            System.out.println("Dispositivo ligado! \n");  
-    Kobo.menu(opcao);
+    if( Kobo instanceof Kobo ){Kobo.menu(opcao);}
     switch(opcao){
         case 1:  
            Livronovo.setAtributos();

@@ -11,5 +11,5 @@ package Tablet;
  * @param <T>
  */
 public interface Comparable<T> {
-    int compareTo(T outro);
+    int compareTo(T Kindle);
 }  

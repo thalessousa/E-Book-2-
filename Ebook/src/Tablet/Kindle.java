@@ -81,4 +81,7 @@ public class Kindle extends Reader implements Device,Comparable {
         System.out.println("10 - Desligar o dispositivo(Sai do Programa) \n");
         Main.opcao = input.nextInt();
     }
+    public boolean TesteEquals(Kindle Kindle,Kobo Kobo) {    
+        return (Kindle.equals(Kobo)); 
+    } 
 }
