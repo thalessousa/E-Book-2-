@@ -9,15 +9,16 @@ import Biblioteca.Editora;
 import Tablet.Kindle;
 import Tablet.Kobo;
 import java.util.Scanner;
-import Tablet.Ligar;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Thales Sousa
  */
-
+ 
 public class Main {
-    public static int opcao,opcaoligar,opcaodispositivo;
+    public static int opcao,opcaoligar;
     static  Scanner input = new Scanner(System.in);
+    private static String opcaodispositivo = "1";
     
     public static void main(String[] args){
     System.out.println("Bem vindo");
@@ -25,23 +26,18 @@ public class Main {
     Kindle Kindle = new Kindle();
     Kobo Kobo = new Kobo();
     Editora JBC = new Editora();
-    //Ligar Opcaoligar = new Ligar();
     do{
-       System.out.println("Deseja usar qual dispositivo? \n");
-       System.out.println("1 - Kindle \n"); 
-       System.out.println("2 - Kobo \n"); 
-       opcaodispositivo = input.nextInt();
+       opcaodispositivo = JOptionPane.showInputDialog("Deseja usar qual dispositivo? \n1 - Kindle \n2 - Kobo \n");
+       opcaodispositivo = input.nextLine();
        switch(opcaodispositivo){
-           case 1:
-           if( Kindle instanceof Kindle )
-       System.out.println("Agora voce esta usando um kindle! \n");
+           case "1":
        System.out.println("Deseja ligar o dispositivo? \n");
        System.out.println("1 - Sim \n"); 
        System.out.println("2 - Não(Sai do programa) \n"); 
        opcaoligar = input.nextInt();
        switch(opcaoligar){
            case 1:
-    Kindle.on();
+           System.out.println("Dispositivo ligado! \n");  
     do{
     if( Kindle instanceof Kindle ){Kindle.menu(opcao);}
     switch(opcao){
@@ -83,17 +79,16 @@ public class Main {
     
               break;
                
-           case 2:
-       if( Kobo instanceof Kobo )
-       System.out.println("Agora voce esta usando um kobo! \n");
+           case "2":
+      do{
+          do{
        System.out.println("Deseja ligar o dispositivo? \n");
        System.out.println("1 - Sim \n"); 
        System.out.println("2 - Não(Sai do programa) \n"); 
        opcaoligar = input.nextInt();
        switch(opcaoligar){
            case 1:
-    Kobo.on();
-    do{
+           System.out.println("Dispositivo ligado! \n");  
     if( Kobo instanceof Kobo ){Kobo.menu(opcao);}
     switch(opcao){
         case 1:  
@@ -128,11 +123,10 @@ public class Main {
             opcao=0;
             break;
     }
+    }
     }while(opcao!=0);
     break;
     }while(opcao!=0);
-    
-              break;
 }
 }while(opcao!=0);
 }
